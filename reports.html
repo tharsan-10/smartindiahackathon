@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports & Analytics - Empowering Students</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <div class="text-2xl font-bold text-blue-600">[LOGO]</div>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="about.html" class="hover:text-blue-600">About</a>
+        <a href="services.html" class="hover:text-blue-600">Services</a>
+        <a href="student-login.html" class="hover:text-blue-600">Student Login</a>
+        <a href="faculty-login.html" class="hover:text-blue-600">Faculty Login</a>
+        <a href="reports.html" class="text-blue-600 font-semibold">Reports</a>
+        <a href="help.html" class="hover:text-blue-600">Help</a>
+        <a href="student-login.html" class="px-3 py-1 bg-blue-600 text-white rounded-lg">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Reports Section -->
+  <section class="max-w-7xl mx-auto px-6 py-24 mt-12">
+    <h2 class="text-4xl font-bold text-blue-600 mb-10 text-center">Reports & Analytics</h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+      <!-- Bar Chart -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg mb-4">Student Participation</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <!-- Pie Chart -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg mb-4">Activity Outcomes</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+      <!-- Line Chart -->
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-semibold text-lg mb-4">Staff Engagement</h3>
+        <canvas id="lineChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-6 text-center">
+    <p>Contact: info@example.com | Phone: +91 1234567890</p>
+    <p class="mt-2">Developed under Smart India Hackathon (SIH25093).</p>
+  </footer>
+
+  <!-- Floating Chat -->
+  <button class="fixed bottom-6 right-6 bg-blue-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-blue-700">
+    Chat with Us – Support
+  </button>
+
+  <!-- Chart.js Script -->
+  <script>
+    // Bar Chart
+    new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        datasets: [{
+          label: 'Participation',
+          data: [120, 150, 180, 100, 200],
+          backgroundColor: '#0b74de'
+        }]
+      }
+    });
+
+    // Pie Chart
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Completed', 'Pending', 'In Progress'],
+        datasets: [{
+          data: [60, 25, 15],
+          backgroundColor: ['#0b74de', '#f59e0b', '#10b981']
+        }]
+      }
+    });
+
+    // Line Chart
+    new Chart(document.getElementById('lineChart'), {
+      type: 'line',
+      data: {
+        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+        datasets: [{
+          label: 'Engagement',
+          data: [30, 50, 70, 90],
+          borderColor: '#0b74de',
+          fill: false
+        }]
+      }
+    });
+  </script>
+</body>
+</html>
